@@ -1,11 +1,10 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
+import Navbar from './components/navbar'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <div className='test' style={{fontSize: "30px"}}>
-        HELLO WORLD
-      </div>
+      <Navbar/>
     </div>
   )
 }
