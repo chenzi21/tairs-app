@@ -1,6 +1,6 @@
 import React from "react";
 import NavCategory from "./NavCategory";
-import styles from "../../styles/Navbar.module.scss"
+import styles from "./Navbar.module.scss"
 
 const categories = [
     "Merchandies",
