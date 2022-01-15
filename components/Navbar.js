@@ -1,9 +1,10 @@
 import React from "react";
 import NavCategory from "./NavCategory";
-import styles from "./Navbar.module.scss"
+import styles from "../styles/Navbar.module.scss"
 
 const categories = [
     "Merchandies",
+    "Drawings",
     "Contact Us",
     "About"
 ]

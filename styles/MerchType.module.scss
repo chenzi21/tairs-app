@@ -1,0 +1,17 @@
+.MerchTypeContainer{
+    display: flex;
+    width: 90%;
+    height: 30%;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-around;
+    .merchContainerTitle{
+        font-size: 30px;
+    }
+    .merchContent{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+}

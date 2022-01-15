@@ -1,0 +1,12 @@
+.singleMerch{
+    display: flex;
+    &[data-display="false"]{
+        display: none;
+    }
+    .merchTitle{
+        font-size: medium;
+    }
+    .price{
+        font-size: medium;
+    }
+}

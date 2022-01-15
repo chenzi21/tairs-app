@@ -1,0 +1,28 @@
+.drawingsMasterContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .drawingContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: gray;
+        border-radius: 15px;
+        margin: 2%;
+        justify-content: center;
+        width: 300px;
+        img{
+            width: 200px;
+            margin: 5%;
+            border-radius: 10px;
+        }
+        .description{
+            font-size: 15px;
+        }
+    }
+}
