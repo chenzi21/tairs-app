@@ -18,11 +18,8 @@
             z-index: 2;
         }
         .sliderSlide{
-            // transition: transform 3s;
-            transition-property: transform;
-            transition-duration: 3s;
             &[data-scale="true"]{
-                transform: scale(1.2);
+                background-color: green;
             }
         }
     }

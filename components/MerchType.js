@@ -4,63 +4,64 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
 import SingleMerch from "./singleMerch";
 import RandomId from "../essentials/randomId"
+import jordans from "../images/jordans.jpg"
 
 const merchWidth = 150
 
 const Merch = [
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "100$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "200$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "300$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
     {
         title: "air-jordans",
-        image: "someImage",
+        image: jordans.src,
         price: "400$"
     },
 ]
@@ -68,20 +69,24 @@ const Merch = [
 
 
 export default function MerchType({ title }) {
-    const [transX, setTransX] = useState(0)
+    const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 0 })
 
     const clickRight = () => {
-        setTransX(() => {
-            return transX - 2
+        setSliderInfo(() => {
+            const newInfo = { ...sliderInfo }
+            newInfo.transX -= 2
+            newInfo.curView += 1
+            return newInfo
         })
-        console.log(`right ${transX}`)
     }
 
     const clickLeft = () => {
-        setTransX(() => {
-            return transX + 2
+        setSliderInfo(() => {
+            const newInfo = { ...sliderInfo }
+            newInfo.transX += 2
+            newInfo.curView -= 1
+            return newInfo
         })
-        console.log(`left ${transX}`)
     }
 
     return (
@@ -92,9 +97,9 @@ export default function MerchType({ title }) {
             <div className={styles.merchContent}>
                 <FontAwesomeIcon className={styles.icon} icon={faChevronCircleLeft} onClick={() => clickLeft()} />
                 {Merch.map((merch, i) => {
-                    console.log(i === (transX/2))
+                    const { transX, curView } = sliderInfo
                     return (
-                        <div className={styles.sliderSlide} key={RandomId()} data-scale={i === (transX/2)} style={{ transform: `translateX(${(i + transX) * merchWidth + 75}px)`, minWidth: `${merchWidth}px`, transition: "transform 10s" }}>
+                        <div className={styles.sliderSlide} key={RandomId()} data-scale={i === curView} style={{ transform: `translateX(${(i + transX) * merchWidth + 75}px) scale(1)`, minWidth: `${merchWidth}px` }}>
                             <SingleMerch title={merch.title + i} price={merch.price} image={merch.image} />
                         </div>
                     )
