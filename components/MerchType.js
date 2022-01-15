@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/MerchType.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -70,12 +70,17 @@ const Merch = [
 
 export default function MerchType({ title }) {
     const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 1 })
-    
+
     const clickRight = () => {
         setSliderInfo(() => {
             const newInfo = { ...sliderInfo }
-            newInfo.transX -= 2
-            newInfo.curView += 1
+            if (newInfo.curView === Merch.length - 1) {
+                newInfo.curView = 0
+                newInfo.transX = 2
+            } else {
+                newInfo.transX -= 2
+                newInfo.curView += 1
+            }
             return newInfo
         })
     }
@@ -83,11 +88,20 @@ export default function MerchType({ title }) {
     const clickLeft = () => {
         setSliderInfo(() => {
             const newInfo = { ...sliderInfo }
-            newInfo.transX += 2
-            newInfo.curView -= 1
+            if (newInfo.curView === 0) {
+                newInfo.curView = Merch.length - 1
+                newInfo.transX = -((newInfo.curView - 1) * 2)
+            } else {
+                newInfo.transX += 2
+                newInfo.curView -= 1
+            }
             return newInfo
         })
     }
+
+    useEffect(() => {
+        console.log(sliderInfo)
+    }, [sliderInfo])
 
     return (
         <div className={styles.MerchTypeContainer}>
