@@ -1,10 +1,10 @@
 .MerchTypeContainer{
     display: flex;
-    width: 90%;
+    width: 100%;
     height: 30%;
     flex-direction: column;
     align-self: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     .merchContainerTitle{
         font-size: 30px;
     }
@@ -12,6 +12,18 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        justify-content: space-around;
+        align-items: center;
+        overflow-x: hidden;
+        .icon{
+            z-index: 2;
+        }
+        .sliderSlide{
+            // transition: transform 3s;
+            transition-property: transform;
+            transition-duration: 3s;
+            &[data-scale="true"]{
+                transform: scale(1.2);
+            }
+        }
     }
 }

@@ -3,6 +3,12 @@
     &[data-display="false"]{
         display: none;
     }
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-evenly;
+    transition: transform 1s;
+    width: 100%;
     .merchTitle{
         font-size: medium;
     }
