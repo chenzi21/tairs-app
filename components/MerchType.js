@@ -6,7 +6,7 @@ import SingleMerch from "./singleMerch";
 import RandomId from "../essentials/randomId"
 import jordans from "../images/jordans.jpg"
 
-const merchWidth = 150
+const merchWidth = 300
 
 const Merch = [
     {
@@ -69,8 +69,8 @@ const Merch = [
 
 
 export default function MerchType({ title }) {
-    const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 0 })
-
+    const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 1 })
+    
     const clickRight = () => {
         setSliderInfo(() => {
             const newInfo = { ...sliderInfo }
@@ -96,14 +96,16 @@ export default function MerchType({ title }) {
             </div>
             <div className={styles.merchContent}>
                 <FontAwesomeIcon className={styles.icon} icon={faChevronCircleLeft} onClick={() => clickLeft()} />
-                {Merch.map((merch, i) => {
-                    const { transX, curView } = sliderInfo
-                    return (
-                        <div className={styles.sliderSlide} key={RandomId()} data-scale={i === curView} style={{ transform: `translateX(${(i + transX) * merchWidth + 75}px) scale(1)`, minWidth: `${merchWidth}px` }}>
-                            <SingleMerch title={merch.title + i} price={merch.price} image={merch.image} />
-                        </div>
-                    )
-                })}
+                <div className={styles.slider}>
+                    {Merch.map((merch, i) => {
+                        const { transX, curView } = sliderInfo
+                        return (
+                            <div className={styles.sliderSlide} key={RandomId()} style={{ transform: `translateX(${(i + transX) * merchWidth + merchWidth / 4}px)`, minWidth: `${merchWidth}px` }}>
+                                <SingleMerch title={merch.title + i} price={merch.price} image={merch.image} shouldScale={i === curView} />
+                            </div>
+                        )
+                    })}
+                </div>
                 <FontAwesomeIcon className={styles.icon} icon={faChevronCircleRight} onClick={() => clickRight()} />
             </div>
         </div>

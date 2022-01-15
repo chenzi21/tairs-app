@@ -13,14 +13,18 @@
         flex-direction: row;
         width: 100%;
         align-items: center;
-        overflow-x: hidden;
+        height: 350px;
+        // overflow-x: hidden;
         .icon{
             z-index: 2;
         }
-        .sliderSlide{
-            &[data-scale="true"]{
-                background-color: green;
-            }
+        .slider{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 90%;
+            align-items: center;
+            overflow-x: hidden;
         }
     }
 }

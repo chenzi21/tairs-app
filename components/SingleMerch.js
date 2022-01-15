@@ -1,9 +1,10 @@
 import React from "react"
 import styles from "../styles/SingleMerch.module.scss"
 
-export default function SingleMerch ({title, image, price}) {
+export default function SingleMerch ({title, image, price, shouldScale}) {
+    console.log(title, shouldScale)
     return(
-        <div className={styles.singleMerch}>
+        <div className={styles.singleMerch} data-scale={shouldScale}>
             <div className={styles.merchTitle}>
                 {title}
             </div>
