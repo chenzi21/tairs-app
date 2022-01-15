@@ -66,8 +66,6 @@ const Merch = [
     },
 ]
 
-
-
 export default function MerchType({ title }) {
     const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 1 })
 
@@ -99,13 +97,9 @@ export default function MerchType({ title }) {
         })
     }
 
-    useEffect(() => {
-        console.log(sliderInfo)
-    }, [sliderInfo])
-
     return (
         <div className={styles.MerchTypeContainer}>
-            <div className={styles.merchContainerTitle}>
+            <div className={`${styles.merchContainerTitle} noSelect`}>
                 {title}
             </div>
             <div className={styles.merchContent}>
@@ -114,7 +108,7 @@ export default function MerchType({ title }) {
                     {Merch.map((merch, i) => {
                         const { transX, curView } = sliderInfo
                         return (
-                            <div className={styles.sliderSlide} key={RandomId()} style={{ transform: `translateX(${(i + transX) * merchWidth + merchWidth / 4}px)`, minWidth: `${merchWidth}px` }}>
+                            <div className={styles.sliderSlide} key={RandomId()} style={{ transform: `translateX(${(i + transX) * merchWidth + merchWidth / 16}px)`, minWidth: `${merchWidth}px`, transition: "transform 0.5s ease" }}>
                                 <SingleMerch title={merch.title + i} price={merch.price} image={merch.image} shouldScale={i === curView} />
                             </div>
                         )

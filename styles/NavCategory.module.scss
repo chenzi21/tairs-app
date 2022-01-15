@@ -1,0 +1,9 @@
+.container{
+    height: min-content;
+    .title{
+        font-size: 35px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
