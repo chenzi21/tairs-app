@@ -1,6 +1,6 @@
 .navContainer {
-	width: 20%;
-	border: black solid 1px;
+	width: 25%;
+	height: 70%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -8,11 +8,12 @@
 	&:last-child {
 		margin-right: 25px;
 	}
+	&:hover {
+		cursor: pointer;
+		background-color: rgb(211, 203, 203);
+	}
 	.title {
 		font-size: 25px;
 		justify-self: center;
-		&:hover {
-			cursor: pointer;
-		}
 	}
 }

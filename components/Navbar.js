@@ -1,7 +1,7 @@
 import React from "react";
 import NavCategory from "./NavCategory";
 import styles from "../styles/Navbar.module.scss";
-import Logo from "../images/logo.png";
+import Logo from "../images/logo.jpeg";
 
 const categories = [
     "Merchandise",
