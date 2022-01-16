@@ -5,7 +5,7 @@ import styles from "../styles/NavCategory.module.scss";
 export default function NavCategory({ title }) {
     return (
         <div className={styles.container}>
-            <Link href={{ pathname: `/${title.replace(" ", "")}` }}>
+            <Link href={{ pathname: `/${title.replace(" ", "")}` }} passHref>
                 <div className={`${styles.title} noSelect`}>
                     {title}
                 </div>
