@@ -108,7 +108,7 @@ export default function MerchType({ title }) {
                     {Merch.map((merch, i) => {
                         const { transX, curView } = sliderInfo;
                         return (
-                            <div className={styles.sliderSlide} key={merch.title} style={{ transform: `translateX(${(i + transX) * 100 + 40}%)`, minWidth: `${merchWidth}px`, transition: "transform 0.5s ease" }}>
+                            <div className={styles.sliderSlide} key={merch.title} style={{ transform: `translateX(${(i + transX) * 100 + 38}%)`, minWidth: `${merchWidth}px`, transition: "transform 0.5s ease" }}>
                                 <SingleMerch title={merch.title} price={merch.price} image={merch.image} shouldScale={i === curView} />
                             </div>
                         );
