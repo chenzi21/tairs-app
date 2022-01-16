@@ -10,7 +10,12 @@
 	}
 	&:hover {
 		cursor: pointer;
-		background-color: rgb(211, 203, 203);
+		background-color: rgb(224, 224, 224);
+		-webkit-transition: background-color 500ms ease-in-out;
+		-moz-transition: background-color 500ms ease-in-out;
+		-o-transition: background-color 500ms ease-in-out;
+		-ms-transition: background-color 500ms ease-in-out;
+		transition: background-color 500ms ease-in-out;
 	}
 	.title {
 		font-size: 25px;
