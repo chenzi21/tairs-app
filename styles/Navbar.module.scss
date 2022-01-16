@@ -1,6 +1,12 @@
-.navbar{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+.navbar {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	.logo {
+		width: 60px;
+		border-radius: 15px;
+		margin: 15px;
+	}
 }

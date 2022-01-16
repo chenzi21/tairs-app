@@ -16,7 +16,7 @@ export default function Drawings() {
             {images.map(drawing => {
                 return (
                     <div className={styles.drawingContainer} key={`${drawing.image.src}`}>
-                        <Image src={drawing.image.src} alt="" />
+                        <img src={drawing.image.src} alt="" />
                         <div className={styles.description}>
                             {drawing.description}
                         </div>

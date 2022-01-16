@@ -1,6 +1,7 @@
 import React from "react";
 import NavCategory from "./NavCategory";
 import styles from "../styles/Navbar.module.scss";
+import Logo from "../images/logo.png";
 
 const categories = [
     "Merchandise",
@@ -12,6 +13,7 @@ const categories = [
 export default function Navbar() {
     return (
         <div className={styles.navbar}>
+            <img src={Logo.src} alt="" className={styles.logo} />
             {categories.map(category => {
                 return (
                     <NavCategory title={category} key={category} />

@@ -1,9 +1,18 @@
-.container{
-    height: min-content;
-    .title{
-        font-size: 35px;
-        &:hover{
-            cursor: pointer;
-        }
-    }
+.navContainer {
+	width: 20%;
+	border: black solid 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	&:last-child {
+		margin-right: 25px;
+	}
+	.title {
+		font-size: 25px;
+		justify-self: center;
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }
