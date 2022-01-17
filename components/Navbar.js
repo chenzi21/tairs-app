@@ -23,7 +23,11 @@ export default function Navbar() {
     };
 
     useEffect(() => {
-        if (menuOpen) setMenuOpen(false)
+        if (menuOpen) {
+            setTimeout(() => {
+                setMenuOpen(false)
+            }, 1300)
+        }
     }, [router.route])
 
     return (

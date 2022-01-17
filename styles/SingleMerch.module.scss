@@ -49,3 +49,9 @@
 .noSelect:focus {
 	outline: none !important;
 }
+
+@media screen and (max-width: 768px) {
+	.singleMerch{
+		min-width: 17vw;
+	}
+}
