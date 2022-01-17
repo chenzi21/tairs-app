@@ -1,38 +1,38 @@
-.MerchTypeContainer{
-    display: flex;
-    width: 100%;
-    height: 50%;
-    flex-direction: column;
-    align-self: center;
-    justify-content: space-evenly;
-    margin: 2% 0;
-    .merchContainerTitle{
-        font-size: 60px;
-        align-self: flex-start;
-        margin: 20px;
-    }
-    .merchContent{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
-        height: 350px;
-        // overflow-x: hidden;
-        .icon{
-            z-index: 2;
-            width: 30px;
-            height: 30px;
-            &:hover{
-                cursor: pointer;
-            }
-        }
-        .slider{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 90%;
-            align-items: center;
-            overflow-x: hidden;
-        }
-    }
+.MerchTypeContainer {
+	display: flex;
+	width: 100%;
+	height: 50%;
+	flex-direction: column;
+	align-self: center;
+	justify-content: space-evenly;
+	margin: 2% 0;
+	.merchContainerTitle {
+		font-size: clamp(20px, 2.5vw, 60px);
+		align-self: flex-start;
+		margin: 20px;
+	}
+	.merchContent {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		align-items: center;
+		height: 350px;
+		// overflow-x: hidden;
+		.icon {
+			z-index: 2;
+			width: 30px;
+			height: 30px;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		.slider {
+			display: flex;
+			flex-direction: row;
+			width: 90vw;
+			height: 90%;
+			align-items: center;
+			overflow-x: hidden;
+		}
+	}
 }
