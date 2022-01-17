@@ -12,7 +12,6 @@ const merchTypes = [
 export default function Merchandise() {
     return (
         <div className={styles.masterContainer}>
-            <Navbar />
             <div className={styles.mainContainer}>
                 {merchTypes.map(type => {
                     return (<MerchType title={type} key={type} />);

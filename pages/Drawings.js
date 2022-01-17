@@ -12,7 +12,6 @@ const images = [{ image: Dragon, description: "beautifuly marvelous" }, { image:
 export default function Drawings() {
     return (
         <div className={styles.drawingsMasterContainer}>
-            <Navbar />
             {images.map(drawing => {
                 return (
                     <div className={styles.drawingContainer} key={`${drawing.image.src}`}>

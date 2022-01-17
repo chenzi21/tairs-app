@@ -36,8 +36,8 @@
 		.categories {
 			transition: all 0.2s ease-in-out;
 			position: absolute;
-			top: 2vh;
-			right: 4vw;
+			top: 4vh;
+			right: 12vw;
 			width: 0px;
 			height: 0px;
 			overflow: hidden;
@@ -47,6 +47,8 @@
 			border-radius: 10px;
 			display: flex;
 			&[data-menu-open="true"] {
+				top: 2vh;
+				right: 4vw;
 				width: 65%;
 				height: 40%;
 			}
