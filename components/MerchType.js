@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/MerchType.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
-import SingleMerch from "./singleMerch";
+import SingleMerch from "./SingleMerch";
 // import RandomId from "../essentials/randomId";
 import jordans from "../images/jordans.jpg";
 
