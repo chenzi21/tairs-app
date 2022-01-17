@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../styles/Merchandise.module.scss";
-import MerchType from "../components/MerchType";
-import Navbar from "../components/Navbar";
+import styles from "../../styles/Merchandise.module.scss";
+import MerchType from "../../components/MerchType";
+import Navbar from "../../components/Navbar";
 
 const merchTypes = [
     "Hats",

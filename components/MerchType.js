@@ -8,63 +8,16 @@ import jordans from "../images/jordans.jpg";
 
 const merchWidth = 300;
 
-const Merch = [
-    {
-        title: "air-jordans1",
+const Merch = [];
+
+for (let i = 0; i < 10; i++) {
+    Merch.push({
+        title: `air-jordans${i}`,
         image: jordans.src,
-        price: "100$"
-    },
-    {
-        title: "air-jordans2",
-        image: jordans.src,
-        price: "200$"
-    },
-    {
-        title: "air-jordans3",
-        image: jordans.src,
-        price: "300$"
-    },
-    {
-        title: "air-jordans4",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans5",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans6",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans7",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans8",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans9",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans10",
-        image: jordans.src,
-        price: "400$"
-    },
-    {
-        title: "air-jordans11",
-        image: jordans.src,
-        price: "400$"
-    },
-];
+        price: `${i}00$`
+    });
+}
+
 
 export default function MerchType({ title }) {
     const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 1 });
