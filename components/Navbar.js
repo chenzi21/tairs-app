@@ -36,7 +36,7 @@ export default function Navbar() {
                     );
                 })}
             </div>
-            <FontAwesomeIcon icon={faEllipsisV} className={styles.icon} onClick={handleMenuOpen} />
+            <FontAwesomeIcon icon={faEllipsisV} className={styles.icon} data-menu-open={menuOpen} onClick={handleMenuOpen} />
         </div>
     );
 }

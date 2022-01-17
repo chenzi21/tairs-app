@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/MerchType.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
 import SingleMerch from "./SingleMerch";
 // import RandomId from "../essentials/randomId";
 import jordans from "../images/jordans.jpg";
-
-const merchWidth = 300;
+import useWindowDimensions from "../custom-hooks/useWindowDimensions"
 
 const Merch = [];
 
@@ -49,6 +48,13 @@ export default function MerchType({ title }) {
             return newInfo;
         });
     };
+
+    const { width } = useWindowDimensions()
+    const [merchWidth, setMerchWidth] = useState(width / 6)
+
+    useEffect(() => {
+        setMerchWidth(width / 6)
+    }, [width])
 
     return (
         <div className={styles.MerchTypeContainer}>
