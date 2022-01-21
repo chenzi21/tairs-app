@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/MerchType.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -20,33 +20,48 @@ for (let i = 0; i < 10; i++) {
 
 export default function MerchType({ title }) {
     const [sliderInfo, setSliderInfo] = useState({ transX: 0, curView: 1 });
+    const isAbleToClick = useRef(true)
+
+    const setRef = () => {
+        isAbleToClick.current = false
+        setTimeout(()=>{
+            isAbleToClick.current = true
+        },600)
+    }
+
 
     const clickRight = () => {
-        setSliderInfo(() => {
-            const newInfo = { ...sliderInfo };
-            if (newInfo.curView === Merch.length - 1) {
-                newInfo.curView = 0;
-                newInfo.transX = 2;
-            } else {
-                newInfo.transX -= 2;
-                newInfo.curView += 1;
-            }
-            return newInfo;
-        });
+        if(isAbleToClick.current){
+            setSliderInfo(() => {
+                const newInfo = { ...sliderInfo };
+                if (newInfo.curView === Merch.length - 1) {
+                    newInfo.curView = 0;
+                    newInfo.transX = 2;
+                } else {
+                    newInfo.transX -= 2;
+                    newInfo.curView += 1;
+                }
+                return newInfo;
+            });
+            setRef()
+        }
     };
 
     const clickLeft = () => {
-        setSliderInfo(() => {
-            const newInfo = { ...sliderInfo };
-            if (newInfo.curView === 0) {
-                newInfo.curView = Merch.length - 1;
-                newInfo.transX = -((newInfo.curView - 1) * 2);
-            } else {
-                newInfo.transX += 2;
-                newInfo.curView -= 1;
-            }
-            return newInfo;
-        });
+        if(isAbleToClick.current){
+            setSliderInfo(() => {
+                const newInfo = { ...sliderInfo };
+                if (newInfo.curView === 0) {
+                    newInfo.curView = Merch.length - 1;
+                    newInfo.transX = -((newInfo.curView - 1) * 2);
+                } else {
+                    newInfo.transX += 2;
+                    newInfo.curView -= 1;
+                }
+                return newInfo;
+            });
+            setRef()
+        }
     };
 
     return (

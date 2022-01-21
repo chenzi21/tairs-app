@@ -16,8 +16,14 @@
 		margin: 2%;
 		justify-content: center;
 		width: 300px;
+		transition: transform 0.5s ease-in-out;
+		&:hover{
+			cursor: pointer;
+			transition: transform 0.5s ease-in-out;
+			transform: scale(1.2);
+		}
 		.image {
-			width: 200px;
+			width: 100px;
 			margin: 5%;
 			border-radius: 10px;
 		}

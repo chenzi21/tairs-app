@@ -7,8 +7,8 @@ import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 
 const categories = [
-    "Merchandise",
-    "Drawings",
+    "Clothes",
+    "Art",
     "Contact Us",
     "About"
 ];
